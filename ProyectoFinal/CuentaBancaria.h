@@ -1,3 +1,6 @@
+#ifndef CUENTABANCARIA_H
+#define CUENTABANCARIA_H
+
 #include <string>
 #include <iostream>
 using namespace std;
@@ -21,3 +24,4 @@ public:
   void retirarDinero();
   virtual void mostrarSaldo();
 };
+#endif
