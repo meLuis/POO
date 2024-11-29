@@ -11,6 +11,8 @@ CuentaDebito::CuentaDebito(string _numeroCuenta, string _nombreCliente, float _s
   comisionApertura = _comisionApertura;
   comisionMensual = _comisionMensual;
   limiteRetiro = _limiteRetiro;
+
+  saldo-=comisionApertura;
 }
 CuentaDebito::~CuentaDebito()
 {
@@ -41,10 +43,23 @@ void CuentaDebito::setLimiteRetiro(int _limiteRetiro)
 }
 void CuentaDebito::mostrarSaldo()
 {
-  cout << "Numero de cuenta: " << numeroCuenta << endl;
+  cout << "============================" << endl;
+  cout << "           Cuenta Débito           " << endl;
+  cout << "============================" << endl;
+
+  cout << "Número de cuenta: " << numeroCuenta << endl;
   cout << "Nombre del cliente: " << nombreCliente << endl;
-  cout << "Saldo: " << saldo << endl;
-  cout << "Comision de apertura: " << comisionApertura << endl;
-  cout << "Comision mensual: " << comisionMensual << endl;
-  cout << "Limite de retiro: " << limiteRetiro << endl;
+
+  float saldoTemporal = saldo;
+  saldoTemporal -= comisionMensual;
+  cout << "Saldo después de aplicar la comisión mensual: $" << saldoTemporal << endl;
+
+  saldoTemporal -= saldoTemporal * 0.02;
+  cout << "Saldo final después del descuento del 2%: $" << saldoTemporal << endl;
+
+  cout << "----------------------------" << endl;
+  cout << "Comisión de apertura: $" << comisionApertura << endl;
+  cout << "Comisión mensual: $" << comisionMensual << endl;
+  cout << "Límite de retiro: $" << limiteRetiro << endl;
+  cout << "============================" << endl;
 }

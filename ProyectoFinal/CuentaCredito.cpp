@@ -49,13 +49,25 @@ void CuentaCredito::setNivelCredito(string _nivelCredito)
 {
   nivelCredito = _nivelCredito;
 }
+
 void CuentaCredito::mostrarSaldo()
 {
-  cout << "Numero de cuenta: " << numeroCuenta << endl;
+  cout << "============================" << endl;
+  cout << "          Cuenta Crédito          " << endl;
+  cout << "============================" << endl;
+
+  cout << "Número de cuenta: " << numeroCuenta << endl;
   cout << "Nombre del cliente: " << nombreCliente << endl;
-  cout << "Saldo: " << saldo << endl;
-  cout << "Limite de credito: " << limiteCredito << endl;
-  cout << "Tasa anual: " << tasaAnual << endl;
+
+  float saldoTemporal = saldo;
+  saldoTemporal -= saldoTemporal * 0.04;
+
+  cout << "Saldo después de aplicar el 4%: $" << saldoTemporal << endl;
+
+  cout << "----------------------------" << endl;
+  cout << "Límite de crédito: $" << limiteCredito << endl;
+  cout << "Tasa anual: " << tasaAnual << " %" << endl;
   cout << "Fecha de corte: " << fechaCorte << endl;
-  cout << "Nivel de credito: " << nivelCredito << endl;
+  cout << "Nivel de crédito: " << nivelCredito << endl;
+  cout << "============================" << endl;
 }

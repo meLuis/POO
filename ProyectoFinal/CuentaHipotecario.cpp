@@ -41,10 +41,21 @@ void CuentaHipotecario::setSeguroIncluido(bool _seguroIncluido)
 }
 void CuentaHipotecario::mostrarSaldo()
 {
-  cout << "Numero de cuenta: " << numeroCuenta << endl;
+  cout << "============================" << endl;
+  cout << "      Cuenta Hipotecaria      " << endl;
+  cout << "============================" << endl;
+
+  cout << "Número de cuenta: " << numeroCuenta << endl;
   cout << "Nombre del cliente: " << nombreCliente << endl;
-  cout << "Saldo: " << saldo << endl;
-  cout << "Monto fijo: " << montoFijo << endl;
-  cout << "Plazo: " << plazo << endl;
-  cout << "Seguro incluido: " << seguroIncluido << endl;
+
+  float saldoRestante = saldo - montoFijo;
+
+  cout << "Saldo actual: $" << saldo << endl;
+  cout << "Monto fijo mensual a abonar: $" << montoFijo << endl;
+  cout << "Saldo después de abonar el monto fijo: $" << saldoRestante << endl;
+
+  cout << "----------------------------" << endl;
+  cout << "Plazo del préstamo: " << plazo << " meses" << endl;
+  cout << "Seguro incluido: " << (seguroIncluido ? "Sí" : "No") << endl;
+  cout << "============================" << endl;
 }

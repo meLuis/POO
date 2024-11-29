@@ -80,8 +80,9 @@ void agregarCuenta(vector<unique_ptr<CuentaBancaria>>& cuentas) {
             bool seguroIncluido;
             cout << "Ingrese el monto fijo: ";
             cin >> montoFijo;
-            cout << "Ingrese el plazo (en años): ";
+            cout << "Ingrese el plazo (en anios): ";
             cin >> plazo;
+            plazo*=12;
             cout << "¿Incluye seguro? (1 para Sí, 0 para No): ";
             cin >> seguroIncluido;
             cuentas.push_back(make_unique<CuentaHipotecario>(numeroCuenta, nombreCliente, saldo, montoFijo, plazo, seguroIncluido));

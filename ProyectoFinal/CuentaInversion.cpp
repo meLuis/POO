@@ -31,9 +31,19 @@ void CuentaInversion::setPeriodoInversion(int _periodoInversion)
 }
 void CuentaInversion::mostrarSaldo()
 {
-  cout << "Numero de cuenta: " << numeroCuenta << endl;
+  cout << "============================" << endl;
+  cout << "       Cuenta Inversión       " << endl;
+  cout << "============================" << endl;
+
+  cout << "Número de cuenta: " << numeroCuenta << endl;
   cout << "Nombre del cliente: " << nombreCliente << endl;
-  cout << "Saldo: " << saldo << endl;
-  cout << "Tipo de inversion: " << tipoInversion << endl;
-  cout << "Periodo de inversion: " << periodoInversion << endl;
+
+  float saldoConInteres = saldo + (saldo * 0.12);
+
+  cout << "Saldo después del 12% de interés anual: $" << saldoConInteres << endl;
+
+  cout << "----------------------------" << endl;
+  cout << "Tipo de inversión: " << tipoInversion << endl;
+  cout << "Periodo de inversión: " << periodoInversion << " años" << endl;
+  cout << "============================" << endl;
 }
